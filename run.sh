@@ -1,4 +1,3 @@
 #!/bin/bash
 
-# Run the Docker container
-docker run -i my-java-app
+docker run -i --rm number-sum-app

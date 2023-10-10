@@ -1,4 +1,3 @@
 #!/bin/bash
 
-# Build the Docker image
-docker build -t my-java-app .
+docker build -t number-sum-app .

@@ -1,16 +1,13 @@
-FROM ubuntu
+FROM ubuntu:20.04
 
-# Install Java
-RUN apt-get update && apt-get install -y openjdk-11-jre
+RUN apt-get update && apt-get install -y openjdk-11-jdk
 
-# Copy the Java program into the container
-COPY Main.java /app/Main.java
+RUN mkdir -p /app/src/main/java
 
-# Set the working directory
-WORKDIR /app
+COPY src/main/java/Main.java /app/src/main/java/
 
-# Compile the Java program
+WORKDIR /app/src/main/java
+
 RUN javac Main.java
 
-# Command to run the Java program
 CMD ["java", "Main"]
